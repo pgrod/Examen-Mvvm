@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen_Mvvm.Views.DescuentoView"
+             xmlns:ViewModels="clr-namespace:Examen_Mvvm.ViewModels"
+             Title="DescuentoView">
+    <VerticalStackLayout Spacing=" 12" Padding="16">
+        <Label Text="Primer Producto" FontSize="16" FontAttributes="Bold"/>
+        <Entry Placeholder="Ingrese el precio del primero producto" Text="{Binding Producto1.Precio, Mode=TwoWay}" Keyboard="Numeric"/>
+        <Label Text="Segundo Producto" FontSize="16" FontAttributes="Bold" />
+        <Entry Placeholder="Ingrese el precio del segundo producto" Text="{Binding Producto2.Precio, Mode=TwoWay}" Keyboard="Numeric" />
+        <Label Text="Tercer Producto" FontSize="16" FontAttributes="Bold" />
+        <Entry Placeholder="Ingrese el precio del tercer producto" Text="{Binding Producto3.Precio, Mode=TwoWay}" Keyboard="Numeric" />
+        <Label Text="Subtotal" FontSize="16" FontAttributes="Bold" />
+        <Label Text="{Binding Subtotal, StringFormat='L{0:N2}'}" FontSize="16" />
+        <Label Text="Descuento" FontSize="16" FontAttributes="Bold" />
+        <Label Text="{Binding Descuento, StringFormat='L{0:N2}'}" FontSize="16" />
+        <Label Text="Total a Pagar" FontSize="16" FontAttributes="Bold" />
+        <Label Text="{Binding TotalAPagar, StringFormat='L{0:N2}'}" FontSize="16" />
+        <HorizontalStackLayout Spacing="12">
+            <Button Text="Calcular" Command="{Binding calcularCommand}" />
+            <Button Text="Limpiar" Command="{Binding limpiarCommand}" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
